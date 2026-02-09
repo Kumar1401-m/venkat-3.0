@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 35px;
     width: 35px;
     border-radius: 12px;
-    transform: scale(3);
+    transform: scale(2);
     
 }
 
@@ -1944,109 +1944,76 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 }
+/* ===============================
+   MOBILE FIXES (DO NOT CHANGE DESIGN)
+================================ */
 
-/* =========================
-   MOBILE OPTIMIZATION
-   ========================= */
-@media (max-width: 480px) {
-
-  body {
-    overflow-x: hidden;
-  }
-
-  .hero-section {
-    padding: 7rem 1.2rem 3rem;
-  }
-
-  .hero-content {
-    gap: 2rem;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    border-radius: 18px;
-  }
-
-  .hero-description {
-    text-align: left;
-    font-size: 0.95rem;
-  }
-
-  /* Works carousel cards */
-  .work-card {
-    width: 240px;
-    min-width: 240px;
-    height: 420px;
-  }
-
-  /* Works grid */
-  .works-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Gallery grid */
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* About page */
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  /* Contact page */
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-
-}
-/* =========================
-   TABLET OPTIMIZATION
-   ========================= */
 @media (max-width: 768px) {
 
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .work-card {
-    width: 260px;
-    min-width: 260px;
-    height: 460px;
-  }
-
-}
-/* =========================
-   SMALL LAPTOP OPTIMIZATION
-   ========================= */
-@media (max-width: 1024px) {
-
-  .hero-content {
-    gap: 3rem;
-  }
-
-  .works-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .logo-img {
+        transform: scale(1.6); /* same look, mobile-safe */
+    }
 
 }
 @media (max-width: 768px) {
-  .mobile-menu a {
-    padding: 1rem 1.2rem;
-    font-size: 1rem;
-  }
+
+    .navbar {
+        padding: 0.6rem 0;
+    }
+
+    .nav-container {
+        padding: 0 1.2rem;
+    }
+
+    .mobile-menu {
+        margin-top: 0.5rem;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 7rem 1.2rem 3rem;
+    }
+
+    .hero-content {
+        gap: 2.5rem;
+    }
+
+    .hero-image img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .hero-description {
+        text-align: left;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .work-card {
+        width: 240px;
+        min-width: 240px;
+        height: 426px; /* still 9:16 ratio */
+    }
+
+    @keyframes slide-works {
+        100% {
+            transform: translateX(calc(-240px * 5 - 2rem * 5));
+        }
+    }
+
+}
+@media (max-width: 768px) {
+
+    section {
+        overflow-x: hidden;
+    }
+
+    .works-track,
+    .testimonials-track {
+        gap: 1.2rem;
+    }
+
 }
