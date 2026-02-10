@@ -2018,3 +2018,98 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 }
+/* ========================================
+   RIGHT SIDE MOBILE MENU (ADD ONLY)
+======================================== */
+@media (max-width: 768px) {
+
+  #mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+
+    background: var(--bg-card);
+    padding: 6rem 1.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    border-left: 1px solid var(--border);
+    transition: right 0.35s ease-in-out;
+    z-index: 999;
+  }
+
+  #mobile-menu:not(.hidden) {
+    right: 0;
+  }
+
+}
+/* ========================================
+   HERO TITLE STACK FIX (MOBILE)
+======================================== */
+@media (max-width: 768px) {
+
+  .hero-title {
+    display: block;
+    text-align: center;
+  }
+
+  .typing-animation {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    min-height: auto;
+  }
+
+}
+
+/* =====================================================
+   ACHIEVEMENTS – MOBILE & TABLET (REFERENCE MODEL)
+   Laptop remains untouched
+===================================================== */
+@media (max-width: 1024px) {
+
+  .achievements-stack {
+    padding: 4rem 1.2rem;
+    gap: 3rem;
+  }
+
+  .achievement-card {
+    position: relative;   /* disables sticky only here */
+    top: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem;
+  }
+
+  .achievement-image {
+    width: 100%;
+  }
+
+  .achievement-image img {
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .achievement-content {
+    margin-top: 1.5rem;
+  }
+
+}
+
+/* ========================================
+   VIDEO CONTROLS UX FIX (SAFE)
+======================================== */
+.smart-video {
+    pointer-events: auto;
+}
+
+.smart-video::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.4);
+}
