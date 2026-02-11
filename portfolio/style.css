@@ -249,10 +249,12 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     background: var(--bg-card);
-    padding: 1rem;
-    gap: 0.5rem;
+    padding: 3.5rem 1rem 1rem; /* top space reserved only for close button */
+    gap: 1.2rem;
     border-radius: 15px;
+    position: relative;
 }
+
 
 .mobile-menu a {
     color: var(--text-light);
@@ -274,6 +276,15 @@ h1, h2, h3, h4, h5, h6 {
     .mobile-menu-btn {
         display: block;
     }
+}
+.mobile-menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
 }
 
 /* ========================================
@@ -451,7 +462,26 @@ h1, h2, h3, h4, h5, h6 {
     
     .typing-animation {
         justify-content: center;
+        }
+            .hero-image {
+        order: -1;
     }
+
+    .hero-text {
+        order: 1;
+    }
+    /* Mobile image size control */
+   .hero-image img {
+    max-height: 320px;
+    width: 100%;
+    object-fit: contain;
+}
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+    }
+  
 }
 
 /* ========================================
@@ -2112,4 +2142,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .smart-video::-webkit-media-controls-panel {
     background: rgba(0, 0, 0, 0.4);
+}
+.mobile-menu-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
 }
