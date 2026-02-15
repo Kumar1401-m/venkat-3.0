@@ -49,6 +49,10 @@
     </div>
 
     <div id="mobile-menu" class="mobile-menu hidden">
+        <button class="mobile-menu-close" onclick="toggleMenu()">
+    <i data-lucide="x"></i>
+</button>
+
         <a href="index.html#home" onclick="toggleMenu()">Home</a>
         <a href="about.html">About</a>
         <a href="our-works.html">Our Works</a>
@@ -287,30 +291,7 @@ Passionate about building user-centric digital solutions through code, creativit
         </div>
     </div>
 </footer>
-<!-- Mobile FAB -->
-<div class="mobile-fab">
-    <button class="fab-button" onclick="toggleFAB()" aria-label="Quick Actions">
-        <i data-lucide="zap"></i>
-    </button>
-    <div class="fab-menu" id="fab-menu">
-        <a href="tel:+916281451401" class="fab-item">
-            <i data-lucide="phone"></i>
-            <span>Call</span>
-        </a>
-        <a href="mailto:nagavenkatakumar1401@gmail.com" class="fab-item">
-            <i data-lucide="mail"></i>
-            <span>Email</span>
-        </a>
-        <a href="https://wa.me/916281451401" class="fab-item" target="_blank" rel="noopener noreferrer">
-            <i data-lucide="message-circle"></i>
-            <span>WhatsApp</span>
-        </a>
-        <a href="#home" class="fab-item" onclick="scrollToTop()">
-            <i data-lucide="arrow-up"></i>
-            <span>Top</span>
-        </a>
-    </div>
-</div>
+
 
 <script src="script.js"></script>
 </body>

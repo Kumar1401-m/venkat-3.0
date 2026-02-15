@@ -99,40 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // ========================================
-    // MOBILE FAB (Floating Action Button)
-    // ========================================
-    window.toggleFAB = () => {
-        const fabMenu = document.getElementById('fab-menu');
-        const fabButton = document.querySelector('.fab-button');
-        
-        if (fabMenu && fabButton) {
-            fabMenu.classList.toggle('active');
-            
-            if (fabMenu.classList.contains('active')) {
-                fabButton.style.transform = 'rotate(45deg)';
-            } else {
-                fabButton.style.transform = 'rotate(0deg)';
-            }
-            
-            lucide.createIcons();
-        }
-    };
-    
-    // Close FAB when clicking outside
-    document.addEventListener('click', (e) => {
-        const fab = document.querySelector('.mobile-fab');
-        const fabMenu = document.getElementById('fab-menu');
-        
-        if (fab && fabMenu && !fab.contains(e.target)) {
-            fabMenu.classList.remove('active');
-            const fabButton = document.querySelector('.fab-button');
-            if (fabButton) {
-                fabButton.style.transform = 'rotate(0deg)';
-            }
-        }
-    });
-    
-    // ========================================
     // SMOOTH SCROLL
     // ========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -264,32 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-// ========================================
-// GALLERY FILTER
-// ========================================
-function filterGallery(category) {
-    const items = document.querySelectorAll('.gallery-item');
-    const buttons = document.querySelectorAll('.gallery-btn');
 
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-
-    items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-            item.style.display = 'block';
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'scale(1)';
-            }, 50);
-        } else {
-            item.style.opacity = '0';
-            item.style.transform = 'scale(0.8)';
-            setTimeout(() => {
-                item.style.display = 'none';
-            }, 300);
-        }
-    });
-}
 
 // ========================================
 // GALLERY FILTER + LOAD MORE (FIXED)
@@ -509,4 +450,27 @@ if ('serviceWorker' in navigator) {
         // navigator.serviceWorker.register('/sw.js');
     });
 }
+
+
+// FIX MOBILE 100vh PROBLEM
+function setRealHeight(){
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setRealHeight();
+window.addEventListener('resize', setRealHeight);
+window.addEventListener('orientationchange', setRealHeight);
+
+// ACHIEVEMENTS ANIMATION FIX
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.25 });
+
+document.querySelectorAll('.achievement-card, .stack-card, .timeline-item')
+.forEach(el => observer.observe(el));
 

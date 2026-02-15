@@ -502,6 +502,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
 }
 
+
 /* ========================================
    OUR WORKS SECTION (REEL RATIO)
 ======================================== */
@@ -1612,8 +1613,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 100%;
+    max-width:100% ;
+    height: auto;
     object-fit: cover;
     display: block;
 }
@@ -2150,3 +2151,99 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     margin-bottom: 1rem;
 }
+
+/* ========================================
+   ABOUT PREVIEW SECTION (INDEX PAGE)
+======================================== */
+
+.about-preview-section {
+    padding: 6rem 2rem;
+}
+
+.about-preview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-preview-image img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+}
+
+.about-preview-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-preview-content p {
+    color: var(--text-gray);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .about-preview-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* ===== GLOBAL MOBILE WIDTH FIX ===== */
+@media (max-width: 768px){
+
+    html, body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    *{
+        max-width: 100%;
+    }
+}
+
+@media (max-width:768px){
+
+  .works-track{
+      animation: none;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+  }
+
+  .work-card{
+      min-width: 85%;
+      width: 85%;
+      height: auto;
+  }
+
+}
+
+/* REAL MOBILE HEIGHT FIX */
+:root{
+    --vh: 1vh;
+}
+
+.full-height{
+    min-height: calc(var(--vh) * 100);
+}
+
+/* animation trigger */
+.achievement-card,
+.stack-card,
+.timeline-item{
+    opacity:0;
+    transform:translateY(60px);
+    transition: all 0.7s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
